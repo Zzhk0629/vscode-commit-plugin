@@ -1,17 +1,8 @@
-# vscode-commit-validate 使用规范
+import { QuickPickItem } from 'vscode';
 
-## vscode 提交信息规范插件
+interface CommitSelectType extends QuickPickItem {}
 
-- 下载插件 Landz - Git Commit Validate
-
-- 启动插件 cmd + shift + p 输入openGitCommitValidate
-
-- 在源代码控制界面就能看到提交按钮旁边多了个icon，后续commit操作都通过该按钮控制
-
-## 提交信息的类型
-
-```javascript
-const commitSelectType: Array<CommitSelectType> = [
+export const commitSelectType: Array<CommitSelectType> = [
   {
     label: 'feat',
     detail: '新功能（feature）'
@@ -48,6 +39,4 @@ const commitSelectType: Array<CommitSelectType> = [
     label: 'revert',
     detail: '回退'
   },
-]
-```
-**tip：** 后续提交类型有需求可通过vscode配置项的形式注入
+];
