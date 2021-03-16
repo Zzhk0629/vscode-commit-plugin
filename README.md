@@ -1,6 +1,4 @@
-# vscode-commit-validate 使用规范
-
-## vscode 提交信息规范插件
+# landz-vscode-commitValidate 使用规范
 
 - 下载插件 Landz - Git Commit Validate
 
@@ -51,3 +49,8 @@ const commitSelectType: Array<CommitSelectType> = [
 ]
 ```
 **tip：** 后续提交类型有需求可通过vscode配置项的形式注入
+
+## 快捷键
+
+**window：** alt + enter
+**mac：** option + enter

@@ -13,7 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
 	let currentRepo: Repository | undefined = gitContext?.getAPI(1).repositories[0];
 
 	let disposable = vscode.commands.registerCommand('landz.openGitCommitValidate', (uri) => {
+		console.log(1111111, uri, gitContext, vscode.Uri);
 		if (uri) {
+			console.log(22222, gitContext);
 			if (gitContext === void 0) {
 				return false;
 			} else {
@@ -22,6 +24,8 @@ export function activate(context: vscode.ExtensionContext) {
 				});
 				inputBoxValidate(currentRepo);
 			}
+		} else {
+			inputBoxValidate(currentRepo);
 		}
 	});
 
