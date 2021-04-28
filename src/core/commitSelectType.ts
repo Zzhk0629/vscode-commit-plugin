@@ -39,4 +39,12 @@ export const commitSelectType: Array<CommitSelectType> = [
     label: 'revert',
     detail: '回退'
   },
+  {
+    label: 'chore',
+    detail: '构建过程或辅助工具的变化'
+  },
+  {
+    label: 'ci',
+    detail: '修改项目的持续集成流程（jenkins、Travis等）的提交'
+  }
 ];

@@ -8,7 +8,7 @@ export function inputBoxValidate(repo:Repository | undefined) {
   }
   const inputValue = repo.inputBox.value;
   if (!inputValue) {
-    window.showInformationMessage('请输入提交信息');
+    window.showInformationMessage('请输入提交信息11111');
     return false;
   }
   const showQuickPickPlaceholder: QuickPickOptions = {
@@ -18,7 +18,10 @@ export function inputBoxValidate(repo:Repository | undefined) {
     if (!selectType) {
       return false;
     }
-    repo.inputBox.value = `${selectType.label}:${repo.inputBox.value}`;
+    const reg = /^(.+?):\s/;
+    const label = reg.test(inputValue) ? inputValue.match(reg)![1] : '';
+    const arr = commitSelectType.flatMap((i) => i.label);
+    repo.inputBox.value = arr.includes(label) ? inputValue.replace(reg, `${selectType.label}: `) : `${selectType.label}: ${inputValue}`;
     commands.executeCommand('git.commit');
   });
 }
